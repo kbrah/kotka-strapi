@@ -1,0 +1,123 @@
+{
+  "kind": "collectionType",
+  "collectionName": "compositions",
+  "info": {
+    "singularName": "composition",
+    "pluralName": "compositions",
+    "displayName": "Composition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "composer": {
+      "type": "string",
+      "required": true
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "BASIC1",
+        "BASIC2",
+        "BASIC3"
+      ]
+    },
+    "era": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::era.era"
+    },
+    "added_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "compositions"
+    },
+    "arranger": {
+      "type": "string"
+    },
+    "name_detail": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "parts": {
+      "type": "string"
+    },
+    "opus": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "instrumentation": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::instrument.instrument"
+    },
+    "original_instrumentation": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::instrument.instrument"
+    },
+    "versions": {
+      "type": "string"
+    },
+    "sheet_musics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sheet-music.sheet-music",
+      "mappedBy": "composition"
+    },
+    "availability_info": {
+      "type": "string"
+    },
+    "extra_info": {
+      "type": "string"
+    },
+    "recordings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recording.recording"
+    },
+    "premiere": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "time"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "compositions"
+    },
+    "version": {
+      "type": "string"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type.type"
+    },
+    "type_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::type-detail.type-detail"
+    }
+  }
+}

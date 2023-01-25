@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sheet_musics",
+  "info": {
+    "singularName": "sheet-music",
+    "pluralName": "sheet-musics",
+    "displayName": "sheet_music"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "composition": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::composition.composition",
+      "inversedBy": "sheet_musics"
+    }
+  }
+}
