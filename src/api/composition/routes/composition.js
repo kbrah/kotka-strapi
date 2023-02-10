@@ -6,4 +6,10 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::composition.composition');
+module.exports = createCoreRouter('api::composition.composition', {
+    config: {
+        update: {
+            policies: ['is-owner']
+        }
+    }
+});
