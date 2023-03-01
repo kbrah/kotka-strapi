@@ -62,12 +62,6 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
-    },
-    "compositions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::composition.composition",
-      "mappedBy": "added_by"
     }
   }
 }

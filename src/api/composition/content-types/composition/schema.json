@@ -8,7 +8,8 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "populateCreatorFields": true
   },
   "pluginOptions": {
     "i18n": {
@@ -55,12 +56,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::era.era"
-    },
-    "added_by": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "compositions"
     },
     "arranger": {
       "type": "string",
